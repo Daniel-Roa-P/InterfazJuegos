@@ -53,24 +53,26 @@ public class DBusuarios {
         
         return res;
     }
-//    
-//    public void actualizarArkanoid(Usuario p) {
-//
-//        try {
-//            PreparedStatement pstm = con.getConexion().prepareStatement("update personas set puntajeArkanoid = ? "
-//                    + " where idUsuario = ?");
-//            
-//            pstm.setString(1, p.getNombre());
-//            pstm.setString(2, Integer.toString(p.getPununacionArkanoid()));
-//
-//            pstm.executeUpdate();
-//
-//
-//        } catch (SQLException e) {
-//            System.out.println(e);
-//        }
-//
-//    }
+    
+    public void actualizarArkanoid(Usuario p) {
+
+        try {
+            PreparedStatement pstm = con.getConexion().prepareStatement("update personas set puntajeArkanoid = ? "
+                    + " where idUsuario = ?");
+
+            System.out.println(p.getPuntuacionTemporal());
+            
+            pstm.setInt(1,p.getPuntuacionTemporal());
+            pstm.setString(2,p.getNombre());
+            
+            pstm.executeUpdate();
+
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+    }
 //    
 //    public void actualizarCoches(Usuario p) {
 //

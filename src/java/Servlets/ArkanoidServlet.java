@@ -1,14 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Servlets;
 
-/**
- *
- * @author danbr
- */
 import Datos.DBusuarios;
 import Logica.Usuario;
+import static Servlets.ConexionServlet.u;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +21,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author danbr
  */
-@WebServlet(name = "ConexionServlet", urlPatterns = {"/ConexionServlet"})
-public class ConexionServlet extends HttpServlet {
+@WebServlet(name = "/Arkanoid/ArkanoidServlet?", urlPatterns = {"/Arkanoid/ArkanoidServlet"})
+public class ArkanoidServlet extends HttpServlet {
 
-    public static Usuario u;
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,49 +35,30 @@ public class ConexionServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                
+        DBusuarios bd= new DBusuarios();
+        
+        u.setPuntuacionTemporal(Integer.parseInt(request.getParameter("puntos")));
+        
+        bd.actualizarArkanoid(u);
+        
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        DBusuarios conDb = new DBusuarios();
-        try {
-            ResultSet res = conDb.getUsuario();
-                    
-            request.getSession().setAttribute("personajes", res);
-            
-            while(res.next()){
-                
-                if(res.getString("idUsuario").equals(request.getParameter("usuario")) && res.getString("contraseña").equals(request.getParameter("password"))){
-                
-                    u = new Usuario();
-                    u.setNombre(request.getParameter("usuario"));
-                    
-                    response.sendRedirect("tabla_juegos.jsp");
-                    break;
-                    
-                } else {
-                    
-                    response.sendRedirect("Invalido.jsp");
-                    
-                }
-                
-            }
-            
-            
-        }catch(Exception e){
-            
+        response.sendRedirect("/InterfazJuegos/tabla_juegos.jsp");
+        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Inicio</title>");  
+            out.println("<title>Servlet ArkanoidServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<p>seguimiento: "+conDb.getMensaje()+"</p>");
-            out.println("<h1>Error at " + e.toString() + "</h1>");
+            out.println("<h1>Servlet ArkanoidServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            
-        }finally {            
-            out.close();
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

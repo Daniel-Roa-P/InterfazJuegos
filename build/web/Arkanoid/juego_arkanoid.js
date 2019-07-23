@@ -173,6 +173,8 @@ function dibujarLadrillos(){
     
 }
   
+ 
+  
 function choqueLadrillos(){
     
     for(i=0; i<infoLadrillos.columnas; i++){
@@ -188,6 +190,8 @@ function choqueLadrillos(){
                     temLadrillo.status=0;
                     bolita.direccionY = -aleatorioDirY(bolita.direccionY);
                     puntaje++;
+                    document.getElementById('puntos').value = puntaje;
+                    
                     
                     if(puntaje === nivel*(infoLadrillos.columnas * infoLadrillos.filas)){
                         
@@ -321,6 +325,7 @@ function perderVida(){
 
 function finalizarJuego(){
     
-    document.location.reload();
+    document.location.stop();
+    
     
 }

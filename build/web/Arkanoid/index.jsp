@@ -7,6 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        
+        <form id="frmTest" name="frmTest" action="ArkanoidServlet" method="get">
+        <input type="text" id="puntos" name="puntos">
+        
+            <input type="submit" id="regreso" value="Regresar al menu de juegos">
+            
+        </form>
+        
         <div id="Juego">
             <canvas id="canvas"></canvas>
                 <div id="modelo">
@@ -14,9 +22,12 @@
                     <button id="inicio">
                         <img src="Imagenes/jugar.jpg "/>
                     </button>
-                    
+                                       
                 </div>                 
         </div>
         <script src="juego_arkanoid.js"></script>
+        
+        
+        
     </body>
 </html>
