@@ -49,10 +49,12 @@ function gallina(){
 		if(this.y > 340 && this.seguro == "arriba"){
 			this.seguro = "abajo";
 			this.puntos++;
+                        
 		}
 		if(this.y < 20 && this.seguro == "abajo"){
 			this.seguro = "arriba";
 			this.puntos++;
+                        
 		}
 	}
 	

@@ -62,9 +62,12 @@ function collisionDetection() {
             var b = bricks[c][r];
             if(b.status == 1) {
                 if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    
                     dy = -dy;
                     b.status = 0;
                     score++;
+                    document.getElementById('puntos').value = score;
+                    
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATS!");
                         document.location.reload();

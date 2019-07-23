@@ -7,6 +7,8 @@ function Quica(){
 	this.puntos = 0;
 	this.seguro = "arriba";
 	
+        
+        
 	this.dibujar = function(ctx){
 		var img = this.img[this.sprite];
 		var x = this.x;
@@ -49,6 +51,7 @@ function Quica(){
 		if(this.y > 340 && this.seguro == "arriba"){
 			this.seguro = "abajo";
 			this.puntos++;
+                        
 		}
 		if(this.y < 20 && this.seguro == "abajo"){
 			this.seguro = "arriba";

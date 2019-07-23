@@ -29,9 +29,11 @@ function Quica(Posx, Posy){
 		if(this.accion=="derecha"){
 			this.x += this.velocidad;
 		}
+                
 	}
 	
 	this.colision = function(x,y){
+                
 		var distancia=Math.sqrt( Math.pow( (x-this.x), 2)+Math.pow( (y-this.y),2));
 		if(distancia>this.img[this.sprite].width)
 		   return false;

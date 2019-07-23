@@ -8,6 +8,14 @@
 </head>
 
 <body onload="main();">
+    
+    <form id="frmTest" name="frmTest" action="PuntajeServlet" method="get">
+            <input type="text" id="idJuego" name="idJuego" value="puntajeGallina">
+            <input type="text" id="puntos" name="puntos">
+            <input type="submit" id="regreso" value="Regresar al menu de juegos">
+    
+    </form>
+            
     <canvas id="gameBoard" width="1450" height="620"></canvas>
     <button id="again" onclick="restart()">Again!</button>
 

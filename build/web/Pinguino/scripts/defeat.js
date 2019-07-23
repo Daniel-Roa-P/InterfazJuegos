@@ -14,6 +14,9 @@ class LooseBoard {
 
         textSize(45);
         text(Math.trunc(points) + ' Puntos', this.x, this.y + height / 6);
+        
+        document.getElementById('puntos').value = Math.trunc(points);
+
 
         textSize(25);
         text('Presione R para reiniciar el juego', this.x, height - this.y)

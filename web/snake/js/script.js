@@ -6,7 +6,9 @@ $(document).ready(inicio);
 $(document).keydown(capturaTeclado);
 
 function aleatorio(piso,techo){
-	return Math.floor(Math.random() * (techo - piso + 1)) + piso;
+
+    return Math.floor(Math.random() * (techo - piso + 1)) + piso;
+
 }
 
 function inicio(){
@@ -17,7 +19,7 @@ function inicio(){
 	quica = [new Quica(310, 310)];
 	calacas = new Calaca(65);
 	run();	
-	
+	              
 	$('#instrucciones').click(function(){
         $('#popup').fadeIn('slow');
         $('.popup-overlay').fadeIn('slow');
@@ -35,6 +37,9 @@ function inicio(){
 		if(jugando==false)
 			inicio();	
 	});
+        
+        document.getElementById('puntos').value = quica[0].puntos;
+        
 }
 
 function capturaTeclado(event){
@@ -69,7 +74,9 @@ function capturaTeclado(event){
 		else{
 			quica[0].accion = "izquierda";
 		}
+                              
 	}	
+        document.getElementById('puntos').value = quica[0].puntos;
 }
 
 function run(){ 
@@ -77,6 +84,8 @@ function run(){
 	buffer.height = miCanvas.height;
 	contextoBuffer = buffer.getContext("2d");
 		 
+        document.getElementById('puntos').value = quica[0].puntos;
+                 
 	if(jugando){ 
 		$('#pierde')[0].play();
 		contextoBuffer.clearRect(0,0,buffer.width,buffer.height);
@@ -154,6 +163,7 @@ function run(){
 		contextoBuffer.fillStyle = "#000000";
 		contexto.clearRect(0,0,miCanvas.width,miCanvas.height);
 		contexto.drawImage(buffer, 0, 0);
+                document.getElementById('puntos').value = quica[0].puntos;
 	}
 	
 }

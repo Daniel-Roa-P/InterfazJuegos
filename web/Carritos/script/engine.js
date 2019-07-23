@@ -233,6 +233,7 @@ function RoadFighter(canvas, width, height, inputBuffer) {
 
         var scoreCounter = document.getElementById('score');
         scoreCounter.innerText = this.player.score;
+        document.getElementById('puntos').value = this.player.score;
 
     };
 

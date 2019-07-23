@@ -15,6 +15,8 @@ function inicio(){
 				   new obstaculo()];
 	run();	
 	
+        document.getElementById('puntos').value = gallina.puntos;
+        
 	$('#instrucciones').click(function(){
         $('#popup').fadeIn('slow');
         $('.popup-overlay').fadeIn('slow');
@@ -44,13 +46,17 @@ function capturaTeclado(event){
 	if(event.which==37 || event.which==65)
 		gallina.actualizar('izquierda');
 	
+        document.getElementById('puntos').value = gallina.puntos;
+        
 }
 
 function run(){ 
+    
 	buffer.width = miCanvas.width;
 	buffer.height = miCanvas.height;
 	contextoBuffer = buffer.getContext("2d");
-		 
+        document.getElementById('puntos').value = gallina.puntos;
+                 
 	if(jugando){  
 		contextoBuffer.clearRect(0,0,buffer.width,buffer.height);
 
@@ -72,7 +78,9 @@ function run(){
 		contexto.drawImage(buffer, 0, 0);
 		setTimeout("run()",20);
 		
+                
 	}else{
+                
 		contextoBuffer.clearRect(0,0,buffer.width,buffer.height);
 		contextoBuffer.fillStyle = "#ffffff";
 		gallina.sprite = 3;

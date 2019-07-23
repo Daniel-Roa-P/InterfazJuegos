@@ -7,7 +7,6 @@
 package Servlets;
 
 import Datos.DBusuarios;
-import Logica.Usuario;
 import static Servlets.ConexionServlet.u;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,8 +20,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author danbr
  */
-@WebServlet(name = "/Arkanoid/ArkanoidServlet?", urlPatterns = {"/Arkanoid/ArkanoidServlet"})
-public class ArkanoidServlet extends HttpServlet {
+@WebServlet(name = "/Arkanoid/PuntajeServlet?", urlPatterns = {"/Arkanoid/PuntajeServlet"})
+
+public class PuntajesServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,7 +40,9 @@ public class ArkanoidServlet extends HttpServlet {
         
         u.setPuntuacionTemporal(Integer.parseInt(request.getParameter("puntos")));
         
-        bd.actualizarArkanoid(u);
+        System.out.print(request.getParameter("idJuego"));
+        
+        bd.actualizarArkanoid(u,request.getParameter("idJuego"));
         
         response.setContentType("text/html;charset=UTF-8");
         response.sendRedirect("/InterfazJuegos/tabla_juegos.jsp");

@@ -7,8 +7,16 @@
     
     <body>
         
+        <form id="frmTest" name="frmTest" action="PuntajeServlet" method="get">
+        <input type="text" id="idJuego" name="idJuego" value="puntajeArkanoid">
+        <input type="text" id="puntos" name="puntos">
+        
+            <input type="submit" id="regreso" value="Regresar al menu de juegos">
+        
         <canvas id="myCanvas" width="800" height="320"></canvas>
         <script src="logica.js" type="text/javascript"></script>
+        
+        </form>
         
     </body>
     

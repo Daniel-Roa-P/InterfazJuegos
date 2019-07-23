@@ -54,14 +54,12 @@ public class DBusuarios {
         return res;
     }
     
-    public void actualizarArkanoid(Usuario p) {
+    public void actualizarArkanoid(Usuario p, String Juego) {
 
         try {
-            PreparedStatement pstm = con.getConexion().prepareStatement("update personas set puntajeArkanoid = ? "
+            PreparedStatement pstm = con.getConexion().prepareStatement("update personas set "+ Juego +" = ? "
                     + " where idUsuario = ?");
 
-            System.out.println(p.getPuntuacionTemporal());
-            
             pstm.setInt(1,p.getPuntuacionTemporal());
             pstm.setString(2,p.getNombre());
             

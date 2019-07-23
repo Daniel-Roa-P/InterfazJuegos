@@ -45,7 +45,7 @@ public class ConexionServlet extends HttpServlet {
             
             while(res.next()){
                 
-                if(res.getString("idUsuario").equals(request.getParameter("usuario")) && res.getString("contraseña").equals(request.getParameter("password"))){
+//                if(res.getString("idUsuario").equals(request.getParameter("usuario")) && res.getString("contraseña").equals(request.getParameter("password"))){
                 
                     u = new Usuario();
                     u.setNombre(request.getParameter("usuario"));
@@ -53,11 +53,11 @@ public class ConexionServlet extends HttpServlet {
                     response.sendRedirect("tabla_juegos.jsp");
                     break;
                     
-                } else {
-                    
-                    response.sendRedirect("Invalido.jsp");
-                    
-                }
+//                } else {
+//                    
+//                    response.sendRedirect("Invalido.jsp");
+//                    
+//                }
                 
             }
             
