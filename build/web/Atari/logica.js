@@ -20,7 +20,7 @@ var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
-var lives = 3;
+var lives = 1;
 
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -142,8 +142,8 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
-                document.location.reload();
+
+                document.location.stop();
             }
             else {
                 x = canvas.width/2;

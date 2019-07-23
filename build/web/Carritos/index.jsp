@@ -10,7 +10,7 @@
 <body onload="main();">
     
     <form id="frmTest" name="frmTest" action="PuntajeCoches" method="get">
-            <input type="text" id="idJuego" name="idJuego" value="puntajeGallina">
+            <input type="text" id="idJuego" name="idJuego" value="puntajeCoches">
             <input type="text" id="puntos" name="puntos">
             <input type="submit" id="regreso" value="Regresar al menu de juegos">
     

@@ -24,7 +24,7 @@
 					
 					<th>Numero Juego</th>
 					<th>Nombre Juego</th>
-					
+					<th>Rankings</th>
 				</tr>
 				
 			</thead>
@@ -36,7 +36,8 @@
 					
 					<td><strong>1</strong></td>
                                         <td><a href="Gallina/index.jsp">La gallina</a></td>
-					
+                                        <th><a href="Gallina/index.jsp">Rnking la gallina</a></th>
+                                        
 				</tr>
 				
                         
@@ -45,41 +46,46 @@
 					
 					<td><strong>2</strong></td>
                                         <td><a href="La_Llorona/index.jsp">La llorona</a></td>
-					
+					<td><a href="La_Llorona/index.jsp">Ranking la llorona</a></td>
+                                        
 				</tr>
 				
 				<tr>
 					
 					<td><strong>3</strong></td>
                                         <td><a href="Arkanoid/index.jsp">Arkanoid</a></td>
-					
+                                        <form id="frmTest" name="frmTest" action="ConexionTablas" method="get">
+					<td><input type="submit" value="Ranking Arkanoid"></td>
+                                        </form>
 				</tr>
 					
 				<tr>
 					
 					<td><strong>4</strong></td>
                                         <td><a href="snake/Snake.jsp">La culebrilla</a></td>
-					
+					<td><a href="snake/Snake.jsp">Ranking culebrilla</a></td>
 				</tr>
 					
 				<tr>
 					
 					<td><strong>5</strong></td>
                                         <td><a href="Carritos/index.jsp">Coches</a></td>
-					
+					<td><a href="Carritos/index.jsp">Ranking Coches</a></td>
 				</tr>
 				
 				<tr>
 					
 					<td><strong>6</strong></td>
                                         <td><a href="Atari/index.jsp">Atari breakout</a></td>
-					
+					<td><a href="Atari/index.jsp">Ranking Atari breakout</a></td>
+                                        
 				</tr>
 				
 				<tr>
 					
 					<td><strong>7</strong></td>
                                         <td><a href="Pinguino/index.jsp">Ice penguin</a></td>
+                                        <td><a href="Pinguino/index.jsp">Ranking Ice penguin</a></td>
 					
 				</tr>
 			</tbody>

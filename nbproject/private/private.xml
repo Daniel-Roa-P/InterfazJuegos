@@ -5,8 +5,12 @@
         <group>
             <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/src/java/Datos/DBusuarios.java</file>
             <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/src/java/Servlets/ConexionServlet.java</file>
+            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/web/Atari/logica.js</file>
             <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/src/java/Datos/DBconexion.java</file>
-            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/web/index.jsp</file>
+            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/src/java/Servlets/ConexionTablas.java</file>
+            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/web/tablaArkanoid.jsp</file>
+            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/web/tabla_juegos.jsp</file>
+            <file>file:/C:/Users/danbr/Documents/NetBeansProjects/InterfazJuegos/src/java/Servlets/tablaCoches.java</file>
         </group>
     </open-files>
 </project-private>

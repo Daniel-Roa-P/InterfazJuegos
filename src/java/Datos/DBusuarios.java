@@ -19,27 +19,9 @@ public class DBusuarios {
         
     }
     
-//    public ResultSet getUsuarioPorId(int id) throws SQLException {
-//        PreparedStatement pstm = con.getConexion().prepareStatement("SELECT idUsuario, "
-//                + " contraseña, "
-//                + " puntajeArkanoid, "
-//                + " puntajeCoches, "
-//                + " puntajePinguinos, "
-//                + " puntajeGallina, "
-//                + " puntajeAtari, "
-//                + " puntajeLlorona, "
-//                + " puntajeSnake "
-//                + " FROM personas "
-//                + " WHERE idUsuario = ? ");
-//        pstm.setInt(1, id);
-//
-//        ResultSet res = pstm.executeQuery();
-//        return res;
-//    }
-//    
-    public ResultSet getUsuario() throws SQLException{
+    
+    public ResultSet getPuntajes() throws SQLException{
         PreparedStatement pstm = con.getConexion().prepareStatement("SELECT idUsuario, "
-                + " contraseña, "
                 + " puntajeArkanoid, "
                 + " puntajeCoches, "
                 + " puntajePinguinos, "
@@ -47,17 +29,27 @@ public class DBusuarios {
                 + " puntajeAtari, "
                 + " puntajeLlorona, "
                 + " puntajeSnake "
-                + " FROM usuarios.personas "
-                + " ORDER BY puntajeArkanoid, puntajeSnake ");
+                + " FROM puntajes "
+                + " ORDER BY idUsuario, puntajeSnake ");
         ResultSet res = pstm.executeQuery();
         
         return res;
     }
     
-    public void actualizarArkanoid(Usuario p, String Juego) {
+    public ResultSet getCuenta() throws SQLException{
+        PreparedStatement pstm = con.getConexion().prepareStatement("SELECT idUsuario, "
+                + " contraseña "
+                + " FROM usuarios.cuentas "
+                + " ORDER BY idUsuario, contraseña ");
+        ResultSet res = pstm.executeQuery();
+        
+        return res;
+    }
+    
+    public void getPuntajes(Usuario p, String Juego) {
 
         try {
-            PreparedStatement pstm = con.getConexion().prepareStatement("update personas set "+ Juego +" = ? "
+            PreparedStatement pstm = con.getConexion().prepareStatement("update puntajes set "+ Juego +" = ? "
                     + " where idUsuario = ?");
 
             pstm.setInt(1,p.getPuntuacionTemporal());

@@ -1,11 +1,12 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package Servlets;
 
-/**
- *
- * @author danbr
- */
 import Datos.DBusuarios;
-import Logica.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
@@ -19,11 +20,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author danbr
  */
-@WebServlet(name = "ConexionServlet", urlPatterns = {"/ConexionServlet"})
-public class ConexionServlet extends HttpServlet {
+@WebServlet(name = "ConexionTablas", urlPatterns = {"/ConexionTablas"})
+public class tablaCoches extends HttpServlet {
 
-    public static Usuario u;
-    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,43 +37,11 @@ public class ConexionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         DBusuarios conDb = new DBusuarios();
-        
         try {
-            ResultSet res = conDb.getCuenta();
+            ResultSet res = conDb.getPuntajes();
                     
-            request.getSession().setAttribute("cuentas", res);
-            
-            String usuarioIngresado=request.getParameter("usuario");
-            String contraIn = request.getParameter("password");
-                        
-            int i=0; 
-            
-            while(res.next()){
-                
-                String usuBase = res.getString("idUsuario");
-                String ContaseñaBase=res.getString("contraseña");
-                
-                System.out.print("U ingresado;" + usuarioIngresado);
-                System.out.print("U base: "+usuBase);
-                System.out.print("contra ingre: "+ contraIn);
-                System.out.print("contra base: "+ ContaseñaBase);
-                
-                if(usuBase.equals(usuarioIngresado) && ContaseñaBase.equals(contraIn)){
-                
-                    u = new Usuario();
-                    u.setNombre(request.getParameter("usuario"));
-                    
-                    response.sendRedirect("tabla_juegos.jsp");
-                    break;
-                    
-                } 
-             
-            
-                
-            }
-            
-            response.sendRedirect("Invalido.jsp");
-            
+            request.getSession().setAttribute("puntajes", res);
+            response.sendRedirect("tablaArkanoid.jsp");
         }catch(Exception e){
             
             out.println("<html>");
@@ -91,6 +58,7 @@ public class ConexionServlet extends HttpServlet {
             out.close();
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

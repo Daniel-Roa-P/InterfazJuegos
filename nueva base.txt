@@ -1,0 +1,45 @@
+CREATE TABLE `usuarios`.`cuentas` (
+  
+`idUsuario` VARCHAR(45) NOT NULL,
+  
+`contraseña` VARCHAR(45) NOT NULL ,
+  
+PRIMARY KEY (`idUsuario`)
+)ENGINE=InnoDB;
+
+CREATE TABLE `usuarios`.`puntajes` (
+  
+`idUsuario` VARCHAR(45) NOT NULL,
+  
+`puntajeArkanoid` int NOT NULL,
+  
+`puntajeCoches` int NOT NULL,
+  
+`puntajePinguinos` int NOT NULL,
+
+`puntajeGallina` int NOT NULL,
+  
+`puntajeAtari` int NOT NULL,
+
+`puntajeLlorona` int NOT NULL,
+
+`puntajeSnake` int NOT NULL,
+
+PRIMARY KEY (`idUsuario`)
+)ENGINE=InnoDB;
+
+INSERT INTO usuarios.cuentas (idUsuario, contraseña)
+VALUES ("gloria", "123");
+
+INSERT INTO usuarios.cuentas (idUsuario, contraseña)
+VALUES ("juan", "456");
+
+INSERT INTO usuarios.cuentas (idUsuario, contraseña)
+VALUES ("daniel", "789");
+
+INSERT INTO usuarios.cuentas (idUsuario, contraseña)
+VALUES ("carlos", "abc");
+
+INSERT INTO usuarios.cuentas (idUsuario, contraseña)
+VALUES ("lucy", "666");
+

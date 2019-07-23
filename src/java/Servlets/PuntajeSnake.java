@@ -42,7 +42,7 @@ public class PuntajeSnake extends HttpServlet {
         
         System.out.print(request.getParameter("idJuego"));
         
-        bd.actualizarArkanoid(u,request.getParameter("idJuego"));
+        bd.getPuntajes(u,request.getParameter("idJuego"));
         
         response.setContentType("text/html;charset=UTF-8");
         response.sendRedirect("/InterfazJuegos/tabla_juegos.jsp");
