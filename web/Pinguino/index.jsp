@@ -6,9 +6,9 @@
 
 <body>
     
-    <form id="frmTest" name="frmTest" action="PuntajeServlet" method="get">
-            <input type="text" id="idJuego" name="idJuego" value="puntajeGallina">
-            <input type="text" id="puntos" name="puntos">
+    <form id="frmTest" name="frmTest" action="PuntajePinguinos" method="get">
+            <input type="text" id="idJuego" name="idJuego" value="puntajePinguinos">
+            <input type="text" id="puntos" name="puntos" value="0">
             <input type="submit" id="regreso" value="Regresar al menu de juegos">
     
     </form>

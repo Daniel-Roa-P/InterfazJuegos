@@ -12,8 +12,8 @@
 	</head>
 	<body>
             
-            <form id="frmTest" name="frmTest" action="PuntajeServlet" method="get">
-        <input type="text" id="idJuego" name="idJuego" value="puntajeArkanoid">
+            <form id="frmTest" name="frmTest" action="PuntajeLlorona" method="get">
+        <input type="text" id="idJuego" name="idJuego" value="puntajeLlorona">
         <input type="text" id="puntos" name="puntos">
         <input type="submit" id="regreso" value="Regresar al menu de juegos">
             
